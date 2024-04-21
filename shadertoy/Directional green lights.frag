@@ -31,6 +31,9 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     col.b = max(col.b, col.b + hglh);
     hglh /= GreenIntensity;
     col.g = max(col.g, col.g + hglh);
-    
-    fragColor = mix(texture(iChannel1, uv), col, col.a);;
+
+    //this can be replaced with fragColor = col
+
+    //this allows the BG to be visible in shadertoy.
+    fragColor = mix(texture(iChannel1, uv), col, col.a);
 }
